@@ -1,0 +1,26 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 20px;
+}
+.logo > p {
+  font-weight: bolder;
+  font-size: xx-large;
+  color: white;
+}
+.navigation > div:nth-child(2) {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+  gap: 10px;
+  background-color: black;
+  color: white;
+}
+.navigation > div:nth-child(2) > div {
+  background-color: black;
+  align-content: center;
+  width: 50px;
+  font-size: x-large;
+  text-align: center;
+}
