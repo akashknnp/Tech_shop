@@ -53,9 +53,11 @@
 .price > p:nth-child(1) {
   font-size: xx-large;
   color: white;
+  text-decoration: none;
 }
 .price > p {
   align-content: center;
+  text-decoration: line-through;
 }
 
 .slide-div-1 > button {
@@ -67,4 +69,73 @@
   font-weight: 500;
   margin-top: 10px;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    height: auto;
+    padding: 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .slide-div-1,
+  .slide-div-2 {
+    width: 100%;
+  }
+
+  .slide-div-1 {
+    order: 2;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .slide-div-1 h1 {
+    font-size: 28px;
+  }
+
+  .slide-div-1 > div {
+    gap: 15px;
+    font-size: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .slide-div-2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slide-div-2 > img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .bg-slider {
+    /* position: static; */
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    top: 40px;
+    left: 10px;
+  }
+
+  .bg-slider > h1 {
+    font-size: 60px;
+    opacity: 0.4;
+  }
+
+  .price > p:nth-child(1) {
+    font-size: 22px;
+  }
+
+  .slide-div-1 > button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
 }

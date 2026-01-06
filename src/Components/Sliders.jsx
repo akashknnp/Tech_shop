@@ -52,8 +52,8 @@ const Sliders = () => {
                                                 <h1>{prod.tagline}</h1>
                                                 <br /><br />
                                                 <div className='price'>
-                                                    <p>${prod.finalPrice}</p>
-                                                    <p>${prod.originalPrice}</p>
+                                                    <p>$ {prod.finalPrice}</p>
+                                                    <p>$ {prod.originalPrice}</p>
                                                 </div>
                                                 <button>Shop Now</button>
                                             </div>

@@ -24,3 +24,42 @@
   font-size: x-large;
   text-align: center;
 }
+.back {
+  background-color: white;
+  position: absolute;
+  color: black;
+  top: 50px;
+  right: 200px;
+  padding: 5px 10px;
+  z-index: 3;
+}
+.back-cart {
+  background-color: white;
+  position: absolute;
+  color: black;
+  top: 50px;
+  right: 125px;
+  padding: 5px 10px;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 15px;
+    align-items: center;
+  }
+
+  .logo > p {
+    font-size: 22px;
+  }
+
+  .navigation > div:nth-child(2) {
+    width: auto;
+    gap: 15px;
+  }
+
+  .navigation > div:nth-child(2) > div {
+    width: 40px;
+    font-size: 20px;
+  }
+}

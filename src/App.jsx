@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navigation from './Components/Navigation'
 import Sliders from './Components/Sliders'
+import Login from './Components/Login'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
     <>
       <Navigation />
       <Sliders />
+      {/* <Login /> */}
     </>
   )
 }
