@@ -1,41 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Navigation.css'
-import { IoSearchSharp } from "react-icons/io5";
+import { IoSearchSharp, IoPerson } from "react-icons/io5";
 import { HiShoppingCart } from "react-icons/hi";
-import { IoPerson } from "react-icons/io5";
-import { useEffect } from 'react';
-import "tailwindcss";
 import { Link } from 'react-router-dom';
-
+import Login from './Login'
 
 const Navigation = () => {
     const [search, setSearch] = useState(false)
     const [cart, setcart] = useState(false)
     const [person, setperson] = useState(false)
+    const [islogin, setislogin] = useState(false)
+    const personRef = useRef(null); // 👈 NEW
 
     const handlehover = (param) => {
-        if (param === 'search') {
-            setSearch(true)
-            console.log(search);
-        }
-        else if (param === 'cart') {
-            setcart(true)
-        }
-        else {
-            setperson(true)
-        }
+        if (param === 'search') setSearch(true)
+        else if (param === 'cart') setcart(true)
+        else setperson(true)
     }
+
     const handleleave = (param) => {
-        if (param === 'search') {
-            setSearch(false)
-        }
-        else if (param === 'cart') {
-            setcart(false)
-        }
-        else {
-            setperson(false)
-        }
+        if (param === 'search') setSearch(false)
+        else if (param === 'cart') setcart(false)
     }
+
+    const handleLogin = () => {
+        setislogin(true)
+    }
+
+    // 👇 OUTSIDE CLICK DETECTION
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (
+                personRef.current &&
+                !personRef.current.contains(e.target)
+            ) {
+                setperson(false);
+
+            }
+        };
+
+        document.addEventListener("mousedown", handleOutsideClick);
+
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, []);
 
     return (
         <>
@@ -43,29 +52,61 @@ const Navigation = () => {
                 <div className="logo">
                     <p>Tech-Shop</p>
                 </div>
+
                 <div>
-                    <div className='Search' onMouseEnter={() => handlehover('search')} onMouseLeave={() => handleleave('search')}><IoSearchSharp /></div>
-                    {
-                        search && <p className='back'>search</p>
-                    }
-                    <div className='Cart' onMouseEnter={() => handlehover('cart')} onMouseLeave={() => handleleave('cart')}><HiShoppingCart /></div>
-                    {
-                        cart && <p className='back-cart'>Cart</p>
-                    }
-                    <div className='person' onMouseEnter={() => handlehover('person')} onMouseLeave={() => handleleave('person')}><IoPerson /></div>
-                    {
-                        person && <div className='backperson'>
-                            <div>
-                                <p>Hello !</p>
-                                <p>Access Account and manage orders</p>
+                    {/* SEARCH */}
+                    <div>
+                        <div
+                            className='Search'
+                            onMouseEnter={() => handlehover('search')}
+                            onMouseLeave={() => handleleave('search')}
+                        >
+                            <IoSearchSharp />
+                        </div>
+                        {search && <p className='back'>search</p>}
+                    </div>
+
+                    {/* CART */}
+                    <div>
+                        <div
+                            className='Cart'
+                            onMouseEnter={() => handlehover('cart')}
+                            onMouseLeave={() => handleleave('cart')}
+                        >
+                            <HiShoppingCart />
+                        </div>
+                        {cart && <p className='back-cart'>Cart</p>}
+                    </div>
+
+                    {/* PERSON */}
+                    <div ref={personRef}> {/* 👈 WRAPPER WITH REF */}
+                        <div
+                            className='person'
+                            onClick={() => setperson(prev => !prev)}
+                        >
+                            <IoPerson />
+                        </div>
+
+                        {person && (
+                            <div className='backperson'>
                                 <div>
-                                    <p><span>Login</span>/<span>SignUp</span></p>
+                                    <p>Hello!</p><br />
+                                    <p>Access Account and manage orders</p><br />
+                                    <div>
+                                        <p><span onClick={handleLogin}>Login</span>/<span>SignUp</span></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    }
+                        )}
+                    </div>
                 </div>
             </div>
+            {
+                islogin && <div className=' position-absolute z-8'>
+                    <div> <Login /></div>
+
+                </div>
+            }
         </>
     )
 }

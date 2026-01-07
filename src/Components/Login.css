@@ -1,0 +1,118 @@
+/* Overlay */
+.login-overlay {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+}
+
+/* Card */
+.login-card {
+  background: #111;
+  color: #fff;
+  width: 380px;
+  padding: 30px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+/* Headings */
+.login-card h2 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.subtitle span {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Inputs */
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #e50914;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin: 15px 0;
+}
+
+/* Social Buttons */
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-buttons button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.social-buttons button:not(:last-child) {
+  margin-right: 8px;
+}
+
+.facebook {
+  background: #3b5998;
+}
+
+.google {
+  background: #db4437;
+}
+
+.twitter {
+  background: #1da1f2;
+}

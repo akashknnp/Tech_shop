@@ -25,22 +25,35 @@
   text-align: center;
 }
 .back {
-  background-color: white;
+  background-color: rgb(136, 128, 128);
   position: absolute;
-  color: black;
+  color: rgb(10, 10, 10);
   top: 50px;
   right: 200px;
   padding: 5px 10px;
   z-index: 3;
+  font-size: medium;
 }
 .back-cart {
-  background-color: white;
+  background-color: rgb(136, 128, 128);
   position: absolute;
-  color: black;
+  color: rgb(10, 10, 10);
   top: 50px;
   right: 125px;
   padding: 5px 10px;
   z-index: 3;
+  font-size: medium;
+}
+.backperson {
+  position: absolute;
+  background-color: rgb(136, 128, 128);
+  color: rgb(10, 10, 10);
+  font-size: medium;
+  right: 50px;
+  z-index: 4;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
