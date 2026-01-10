@@ -1,42 +1,66 @@
-.swiper {
+/* Swiper stays GLOBAL */
+.swiper:global(.swiper) {
   height: 85vh;
   padding: 20px;
-  background-color: rgb(17, 16, 16);
+  background-color: rgb(14, 12, 12);
 }
+
+/* MODULE STYLES */
+.slider {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: black;
+}
+
 .cards {
   display: flex;
   box-sizing: border-box;
 }
-.slider {
-  box-sizing: border-box;
-  width: 100%;
-}
-.slide-div-1 {
+
+.slideDiv1 {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px;
   color: white;
+  background-color: black;
 }
-.slide-div-1 h1 {
+
+.slideDiv1 h1 {
   font-size: xxx-large;
 }
-.slide-div-1 > div {
+
+.price {
   display: flex;
   gap: 30px;
   font-size: larger;
   color: rgb(110, 109, 109);
 }
-.slide-div-2 {
-  width: 50%;
+
+.price > p:nth-child(1) {
+  font-size: xx-large;
+  color: white;
+  text-decoration: none;
 }
-.slide-div-2 > img {
+
+.price > p {
+  align-content: center;
+  text-decoration: line-through;
+}
+
+.slideDiv2 {
+  width: 50%;
+  background-color: black;
+}
+
+.slideDiv2 img {
   width: 90%;
   height: 90%;
   padding: 25px;
 }
-.bg-slider {
+
+.bgSlider {
   position: absolute;
   width: 50%;
   top: 250px;
@@ -45,22 +69,13 @@
   color: rgba(255, 255, 255, 0.068);
   box-sizing: border-box;
 }
-.bg-slider > h1 {
-  box-sizing: border-box;
+
+.bgSlider h1 {
   font-size: 150px;
   opacity: 0.5;
 }
-.price > p:nth-child(1) {
-  font-size: xx-large;
-  color: white;
-  text-decoration: none;
-}
-.price > p {
-  align-content: center;
-  text-decoration: line-through;
-}
 
-.slide-div-1 > button {
+.shopBtn {
   background-color: red;
   width: fit-content;
   border: none;
@@ -69,8 +84,10 @@
   font-weight: 500;
   margin-top: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
+/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
   .swiper {
     height: auto;
@@ -81,50 +98,48 @@
     flex-direction: column;
   }
 
-  .slide-div-1,
-  .slide-div-2 {
+  .slideDiv1,
+  .slideDiv2 {
     width: 100%;
   }
 
-  .slide-div-1 {
+  .slideDiv1 {
     order: 2;
     padding: 20px;
     text-align: center;
     align-items: center;
   }
 
-  .slide-div-1 h1 {
+  .slideDiv1 h1 {
     font-size: 28px;
   }
 
-  .slide-div-1 > div {
+  .price {
     gap: 15px;
     font-size: 16px;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .slide-div-2 {
+  .slideDiv2 {
     display: flex;
     justify-content: center;
   }
 
-  .slide-div-2 > img {
+  .slideDiv2 img {
     width: 100%;
     height: auto;
     padding: 10px;
   }
 
-  .bg-slider {
-    /* position: static; */
+  .bgSlider {
     width: 100%;
     text-align: center;
-    margin-top: 10px;
     top: 40px;
     left: 10px;
   }
 
-  .bg-slider > h1 {
+  .bgSlider h1 {
     font-size: 60px;
     opacity: 0.4;
   }
@@ -133,7 +148,7 @@
     font-size: 22px;
   }
 
-  .slide-div-1 > button {
+  .shopBtn {
     width: 100%;
     padding: 12px;
     font-size: 16px;

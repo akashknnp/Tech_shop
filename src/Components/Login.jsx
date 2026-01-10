@@ -11,7 +11,6 @@ const Login = () => {
                 <p className="subtitle">
                     New to Tech-Shop? <span>Create an account</span>
                 </p>
-
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
 
