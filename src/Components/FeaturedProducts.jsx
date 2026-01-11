@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay, Pagination } from 'swiper/modules'
+import { Navigation, Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
+import style from './FeaturedProducts.module.css'
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,37 +17,65 @@ const FeaturedProducts = () => {
     }, [])
 
     const featureProducts = () => {
-        let data = ProductsData.filter((product) => {
+        // let data = 
+        setfeatureData(ProductsData.filter((product) => {
             return Object.keys(product).includes('tag')
-        })
-
-        setfeatureData(data.filter((prod) => {
-            return prod.tag === 'featured-product'
         }))
+
+        // setfeatureData(data.filter((prod) => {
+        //     return prod.tag === 'featured-product'
+        // }))
 
     }
     return (
         <>
-            <div>
+
+
+            <div className={style.mainDiv}>
+                <h2>Featured Products</h2>
                 {
 
                     featureData.length > 0 ? (
-                        <div>
+                        <div className={style.featureMain}>
                             {console.log(featureData)}
-                            <Swiper navigation
-                                autoplay={{ delay: 2000 }}
-                                slidesPerGroup={1}
-                                slidesPerView={1}
-                                className='swiper'>
-                                <SwiperSlide>
-                                    {
-                                        featureData.map((prod) => (
-                                            <h2 className=' text-white'>{prod.title}</h2>
-                                        ))
-                                    }
+                            <Swiper
+                                centeredSlides={true}
+                                slidesPerView={5}
+                                loop={true}
+                                spaceBetween={30}
+                                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                                navigation
+                                breakpoints={{
+                                    0: {            // from 0px up
+                                        slidesPerView: 2,
+                                        centeredSlides: true,
+                                    },
+                                    768: {          // from 768px up (tablet)
+                                        slidesPerView: 3,
+                                    },
+                                    1024: {         // from 1024px up (desktop)
+                                        slidesPerView: 5,
+                                    },
+                                }}
 
-                                </SwiperSlide>
+                                pagination={{ clickable: true }}
+                                modules={[Navigation, Pagination, Autoplay]}
+                            >
+                                {featureData.map((prod) => (
+                                    <SwiperSlide key={prod.id}>
+                                        <div className={style.slide}>
+                                            <p>{prod.title}</p>
+                                            <img src={prod.images[0]} />
+                                            <div>
+                                                <h3>{prod.finalPrice}</h3>
+                                                <h5>{prod.originalPrice}</h5>
+                                            </div>
+
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
                             </Swiper>
+
                         </div>) : (
                         <h2>no data</h2>
                     )

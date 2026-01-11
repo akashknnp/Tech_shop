@@ -24,7 +24,7 @@
   justify-content: center;
   padding: 50px;
   color: white;
-  background-color: black;
+  background-color: rgb(14, 13, 13);
 }
 
 .slideDiv1 h1 {
@@ -51,7 +51,7 @@
 
 .slideDiv2 {
   width: 50%;
-  background-color: black;
+  background-color: rgb(14, 13, 13);
 }
 
 .slideDiv2 img {

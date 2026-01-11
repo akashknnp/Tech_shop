@@ -1,0 +1,90 @@
+.mainDiv {
+  background-color: rgb(14, 13, 13);
+  height: 120vh;
+  align-content: center;
+}
+.mainDiv > h2 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: xx-large;
+  height: 10vh;
+  margin-top: 50px;
+}
+.slide {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 20px;
+  border: 1px solid rgb(15, 15, 15);
+  color: rgb(134, 131, 131);
+  height: 500px;
+  align-content: center;
+  text-align: center;
+}
+.slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+.slide h5 {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.slide img {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Use :global to target Swiper's classes */
+.mainDiv :global(.swiper-slide) {
+  transform: scale(0.8);
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mainDiv :global(.swiper-slide-active) {
+  transform: scale(1.5); /* bigger */
+  opacity: 1;
+  width: 600px;
+  color: white;
+}
+
+.mainDiv :global(.swiper-slide-next),
+.mainDiv :global(.swiper-slide-prev) {
+  transform: scale(0.8); /* slightly bigger than far ones */
+  opacity: 0.8;
+}
+
+@media (max-width: 575px) {
+  .mainDiv {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .mainDiv > h2 {
+    font-size: large;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .slide {
+    height: auto;
+    padding: 10px;
+  }
+
+  .slide img {
+    padding: 10px;
+  }
+
+  /* Swiper scaling */
+  .mainDiv :global(.swiper-slide) {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  .mainDiv :global(.swiper-slide-active) {
+    transform: scale(1);
+    width: auto;
+  }
+}
