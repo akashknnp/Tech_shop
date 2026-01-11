@@ -92,6 +92,7 @@
   .swiper {
     height: auto;
     padding: 10px;
+    width: 100%;
   }
 
   .cards {
@@ -133,7 +134,7 @@
   }
 
   .bgSlider {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     top: 40px;
     left: 10px;

@@ -3,27 +3,27 @@ import {FaShippingFast, FaShieldAlt, FaTags, FaCreditCard} from 'react-icons/fa'
 const servicesData = [
     {
         id: 1,
-        icon: <FaShippingFast />,
+        icon: "shipping",
         title: "Express Delivery",
         info: "Ships in 24 Hours",
     },
     {
         id: 2,
-        icon: <FaShieldAlt />,
+        icon: "shield",
         title: "Brand Warranty",
         info: "100% Original products",
     },
     {
         id: 3,
-        icon: <FaTags />,
+        icon: "tags",
         title: "Exciting Deals",
         info: "On all prepaid orders",
     },
     {
         id: 4,
-        icon: <FaCreditCard />,
+        icon: "card",
         title: "Secure Payments",
-        info: "SSL / Secure сertificate",
+        info: "SSL / Secure certificate",
     },
 ];
 

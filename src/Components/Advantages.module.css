@@ -1,0 +1,92 @@
+.serviceH1 {
+  background-color: rgb(14, 13, 13);
+  padding: 60px 0px;
+}
+
+.service {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0px;
+  color: rgb(187, 182, 182);
+}
+.serviceH1 h1 {
+  text-align: center;
+  padding: 50px 0px;
+  color: whitesmoke;
+}
+.serviceCard {
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.serviceCard > div:nth-child(1) {
+  color: red;
+  font-size: xxx-large;
+  align-content: center;
+}
+.serviceCard p {
+  font-size: sma;
+}
+
+@media (max-width: 575px) {
+  .serviceH1 {
+    padding: 30px 10px;
+  }
+
+  .serviceH1 h1 {
+    font-size: 22px;
+    padding: 20px 0;
+  }
+
+  .service {
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+  }
+
+  .serviceCard {
+    /* flex-direction: column; */
+    text-align: center;
+    gap: 10px;
+    margin: 20px 0;
+    width: 60%;
+
+    justify-content: space-between;
+  }
+
+  .serviceCard > div:nth-child(1) {
+    font-size: 40px;
+    width: 20%;
+  }
+  .serviceCard > div:nth-child(2) {
+    width: max-content;
+  }
+
+  .serviceCard p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .service {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .serviceCard {
+    width: 45%;
+    gap: 15px;
+  }
+
+  .serviceCard > div:nth-child(1) {
+    font-size: 50px;
+  }
+
+  .serviceCard p {
+    font-size: 15px;
+  }
+}

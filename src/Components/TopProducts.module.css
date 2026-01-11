@@ -68,3 +68,50 @@
   font-size: medium;
   border-radius: 5px;
 }
+
+@media (max-width: 767px) {
+  .productMain img {
+    max-height: 250px;
+    object-fit: contain;
+  }
+  .Products > h1 {
+    font-size: x-large;
+  }
+
+  .btns {
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .btns > button {
+    font-size: small;
+    background-color: red;
+    border-radius: 5px;
+  }
+
+  .productMain {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .item {
+    padding: 15px;
+  }
+
+  .item > div:nth-child(1) {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .item > div:nth-child(9) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .item button {
+    height: 45px;
+    font-size: large;
+  }
+}
