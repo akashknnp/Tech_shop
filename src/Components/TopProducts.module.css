@@ -1,0 +1,70 @@
+.Products {
+  background-color: rgb(14, 13, 13);
+}
+
+.Products > h1 {
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+.btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0px;
+}
+.btns > button {
+  width: fit-content;
+  padding: 10px 15px;
+  font-size: large;
+  background-color: rgb(14, 13, 13);
+  color: white;
+  border: none;
+}
+.btns > button:hover {
+  background-color: red;
+  border-radius: 5px;
+}
+
+.productMain {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+.productMain img {
+  width: 100%;
+  text-align: center;
+}
+.item {
+  background-color: rgb(14, 13, 13);
+  padding: 20px;
+  color: rgb(207, 206, 206);
+  border: 1px solid rgb(97, 94, 94);
+  border-radius: 10px;
+}
+.item > div:nth-child(1) {
+  padding: 20px;
+  width: 80%;
+  text-align: center;
+}
+.item > div:nth-child(9) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: whitesmoke;
+}
+.item h4 {
+  text-decoration: line-through;
+  color: grey;
+}
+.item button {
+  width: 100%;
+  color: white;
+  height: 40px;
+  margin-top: 20px;
+  background-color: red;
+  border: none;
+  font-size: medium;
+  border-radius: 5px;
+}

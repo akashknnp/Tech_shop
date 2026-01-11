@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
 
 
             <div className={style.mainDiv}>
-                <h2>Featured Products</h2>
+                <h2>- - Featured Products - -</h2>
                 {
 
                     featureData.length > 0 ? (

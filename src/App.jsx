@@ -6,6 +6,7 @@ import Navigation from './Components/Navigation'
 import Sliders from './Components/Sliders'
 import Login from './Components/Login'
 import FeaturedProducts from './Components/FeaturedProducts'
+import TopProducts from './Components/TopProducts'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <Navigation />
       <Sliders />
       <FeaturedProducts />
+      <TopProducts />
 
     </>
   )
