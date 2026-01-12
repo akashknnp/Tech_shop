@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
             <div className={Fstyle.designerInfo}>
                 <div>
-                    <p>2026 | All rights reserved | ₨ <b>Designed By AKASH N N</b> </p>
+                    <p>2026 | All rights reserved | <b>Designed By AKASH N N</b> </p>
                 </div>
                 <div>
                     {

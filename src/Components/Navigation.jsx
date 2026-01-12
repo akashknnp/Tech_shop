@@ -67,6 +67,7 @@ const Navigation = () => {
                     </div>
 
                     {/* CART */}
+
                     <div>
                         <div
                             className='Cart'
@@ -77,6 +78,8 @@ const Navigation = () => {
                         </div>
                         {cart && <p className='back-cart'>Cart</p>}
                     </div>
+
+
 
                     {/* PERSON */}
                     <div ref={personRef}> {/* 👈 WRAPPER WITH REF */}

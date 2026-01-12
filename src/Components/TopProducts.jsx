@@ -4,9 +4,12 @@ import Pstyle from '../Components/TopProducts.module.css'
 import { Link } from 'react-router-dom'
 import { FaStar } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
+import { addTocart } from '../Redux/CartSlice';
+import { useDispatch } from 'react-redux';
 
 
 const TopProducts = () => {
+    const dispatch = useDispatch()
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -39,6 +42,13 @@ const TopProducts = () => {
             }))
         }
     }
+
+    const handleCart = (param) => {
+        console.log(param);
+
+        dispatch(addTocart(param))
+    }
+
 
     return (
         <>
@@ -77,7 +87,7 @@ const TopProducts = () => {
                                         <h4>₨ {item.originalPrice}</h4>
 
                                     </div>
-                                    <button>Add to Cart</button>
+                                    <button onClick={() => handleCart(item)}>Add to Cart</button>
                                 </div>
                             ))
                         ).concat(<div className={Pstyle.item} id={Pstyle.browse}>
