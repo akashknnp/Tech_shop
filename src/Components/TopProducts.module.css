@@ -69,6 +69,14 @@
   border-radius: 5px;
 }
 
+#browse {
+  text-align: center;
+  align-content: center;
+}
+.arrow {
+  font-size: xxx-large;
+}
+
 @media (max-width: 767px) {
   .productMain img {
     max-height: 250px;

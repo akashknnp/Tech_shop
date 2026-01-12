@@ -49,8 +49,8 @@ const Sliders = () => {
                                                 <br /><br />
 
                                                 <div className={styles.price}>
-                                                    <p>$ {prod.finalPrice}</p>
-                                                    <p>$ {prod.originalPrice}</p>
+                                                    <p>₨  {prod.finalPrice}</p>
+                                                    <p>₨  {prod.originalPrice}</p>
                                                 </div>
 
                                                 <button className={styles.shopBtn}>

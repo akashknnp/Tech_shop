@@ -1,0 +1,59 @@
+.footerMain {
+  display: flex;
+  justify-content: space-around;
+}
+.footers {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  height: 50vh;
+  align-items: center;
+  background-color: black;
+}
+.DivFooter1 {
+  width: 20%;
+}
+.DivFooter1 {
+  color: rgb(185, 183, 183);
+  letter-spacing: 0.5px;
+}
+.DivFooter1 input {
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(146, 145, 145);
+  color: rgb(221, 211, 211);
+  background-color: rgb(17, 17, 17);
+}
+
+.DivFooter1 button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 5px;
+}
+.footers > div:nth-child(2) {
+  width: 80%;
+}
+.cards p,
+h3 {
+  padding: 10px;
+  color: rgb(187, 180, 180);
+}
+.designerInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  align-items: center;
+  font-size: large;
+  background-color: black;
+  color: grey;
+  border-top: 1px solid grey;
+}
+.designerInfo > div:nth-child(2) {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+  font-size: x-large;
+}

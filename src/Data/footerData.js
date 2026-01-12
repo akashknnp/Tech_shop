@@ -99,22 +99,22 @@ export const footMenu = [
 export const footSocial = [
     {
         id: 1,
-        icon: <FaFacebookF />,
+        icon: "facebook",
         path: "/",
     },
     {
         id: 2,
-        icon: <FaTwitter />,
+        icon: "twitter",
         path: "/",
     },
     {
         id: 3,
-        icon: <FaInstagram />,
+        icon: "instagram",
         path: "/",
     },
     {
         id: 4,
-        icon: <FaLinkedinIn />,
+        icon: "linkedin",
         path: "/",
     },
 ];

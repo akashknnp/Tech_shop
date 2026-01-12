@@ -67,8 +67,8 @@ const FeaturedProducts = () => {
                                             <p>{prod.title}</p>
                                             <img src={prod.images[0]} />
                                             <div>
-                                                <h3>{prod.finalPrice}</h3>
-                                                <h5>{prod.originalPrice}</h5>
+                                                <h3>₨ {prod.finalPrice}</h3>
+                                                <h5>₨ {prod.originalPrice}</h5>
                                             </div>
 
                                         </div>

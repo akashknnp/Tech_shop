@@ -8,6 +8,7 @@ import Login from './Components/Login'
 import FeaturedProducts from './Components/FeaturedProducts'
 import TopProducts from './Components/TopProducts'
 import Advantages from './Components/Advantages'
+import Footer from './Components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
       <FeaturedProducts />
       <TopProducts />
       <Advantages />
+      <Footer />
 
     </>
   )

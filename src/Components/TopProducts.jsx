@@ -3,6 +3,7 @@ import productsData from '../Data/productsData'
 import Pstyle from '../Components/TopProducts.module.css'
 import { Link } from 'react-router-dom'
 import { FaStar } from "react-icons/fa";
+import { GoArrowRight } from "react-icons/go";
 
 
 const TopProducts = () => {
@@ -72,14 +73,19 @@ const TopProducts = () => {
                                     <p>{item.info}</p>
                                     <br /><hr /><br />
                                     <div>
-                                        <h1>{item.finalPrice}</h1>
-                                        <h4>{item.originalPrice}</h4>
+                                        <h1>₨ {item.finalPrice}</h1>
+                                        <h4>₨ {item.originalPrice}</h4>
 
                                     </div>
                                     <button>Add to Cart</button>
                                 </div>
                             ))
-                        ) : (<>Loading</>)
+                        ).concat(<div className={Pstyle.item} id={Pstyle.browse}>
+                            <h2>Browse All products<br />
+                                <GoArrowRight className={Pstyle.arrow} />
+                            </h2>
+
+                        </div>) : (<>Loading</>)
                     }
 
                 </div>
