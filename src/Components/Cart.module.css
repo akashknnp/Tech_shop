@@ -3,6 +3,7 @@
   width: 100%;
   color: rgb(170, 170, 170);
   padding: 20px;
+  background-color: rgb(15, 13, 13);
 }
 .cartMain > div:nth-child(1) {
   width: 60%;
@@ -53,4 +54,85 @@
   padding: 15px 25px;
   font-size: large;
   color: red;
+}
+.summary {
+  background-color: rgb(24, 22, 22);
+  width: 40%;
+  height: max-content;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  position: sticky;
+  top: 90px;
+}
+.summary h1 {
+  text-align: center;
+  padding: 10px;
+}
+.summary p {
+  font-size: larger;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+}
+.summary p:nth-child(2) {
+  color: rgb(15, 231, 15);
+}
+.summary h2 {
+  text-align: center;
+  padding: 10px;
+}
+@media (max-width: 576px) {
+  .cartMain {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .cartMain > div:nth-child(1) {
+    order: 2;
+  }
+  .cartMain > div:nth-child(1),
+  .summary {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .cartCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imgCart {
+    width: 140px;
+    height: 140px;
+  }
+
+  .cartCard > div:nth-child(2) {
+    width: 100%;
+  }
+
+  .cartbtns {
+    margin-top: 10px;
+  }
+
+  .cartbtns button,
+  .cartbtns p {
+    padding: 10px 15px;
+    font-size: medium;
+  }
+
+  .summary h1,
+  .summary h2 {
+    font-size: large;
+  }
+
+  .summary p {
+    font-size: medium;
+  }
+
+  .summary {
+    position: sticky;
+    top: 0;
+    box-shadow: 1px 1px 1px black;
+  }
 }

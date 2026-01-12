@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import Cstyle from '../Components/Cart.module.css'
 import { useDispatch } from 'react-redux'
 import { increaseItem, reduceItem } from '../Redux/CartSlice'
+import Footer from '../Components/Footer'
 
 
 const Cart = () => {
@@ -45,11 +46,11 @@ const Cart = () => {
                         ) : (<>No cart items</>)
                     }
                 </div>
-                <div>
+                <div className={Cstyle.summary}>
                     <h1>Order Summary</h1>
+                    <hr />
                     <div>
-
-                        <p>original price : {cart.reduce((total, item) => {
+                        <p>Original price : {cart.reduce((total, item) => {
                             return total = total + (item.quantity * item.originalPrice)
                         }, 0)}</p>
                         <p>Discount : {cart.reduce((total, item) => {
@@ -59,10 +60,10 @@ const Cart = () => {
                         <h2>Total : {cart.reduce((total, item) => {
                             return total = total + (item.quantity * item.finalPrice)
                         }, 0)}</h2>
-
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
