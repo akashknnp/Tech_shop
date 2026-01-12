@@ -7,11 +7,17 @@
   top: 0;
   z-index: 10;
 }
-.logo > p {
+.logo p {
   font-weight: bolder;
   font-size: xx-large;
   color: white;
+
+  text-decoration: none;
 }
+.Cart {
+  color: white;
+}
+
 .navigation > div:nth-child(2) {
   display: flex;
   width: 20%;
@@ -37,7 +43,7 @@
   z-index: 3;
   font-size: medium;
 }
-.back-cart {
+.backcart {
   background-color: rgb(136, 128, 128);
   position: absolute;
   color: rgb(10, 10, 10);

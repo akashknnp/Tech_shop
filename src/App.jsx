@@ -11,6 +11,7 @@ import Footer from './Components/Footer'
 
 import Navigation from '../src/Components/Navigation'
 import Routing from './Routings/Routing'
+import Home from './Pages/Home'
 
 
 
@@ -20,11 +21,6 @@ function App() {
   return (
     <>
       <Navigation />
-      <Sliders />
-      <FeaturedProducts />
-      <TopProducts />
-      <Advantages />
-      <Footer />
       <Routing />
 
     </>

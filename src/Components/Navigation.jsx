@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './Navigation.css'
+import Nstyle from './Navigation.module.css'
 import { IoSearchSharp, IoPerson } from "react-icons/io5";
 import { HiShoppingCart } from "react-icons/hi";
 import { Link } from 'react-router-dom';
@@ -48,36 +48,43 @@ const Navigation = () => {
 
     return (
         <>
-            <div className="navigation">
-                <div className="logo">
-                    <p>Tech-Shop</p>
+            <div className={Nstyle.navigation}>
+                <div className={Nstyle.logo}>
+                    <Link to="/">
+                        <p>Tech-Shop</p>
+                    </Link>
                 </div>
 
                 <div>
                     {/* SEARCH */}
                     <div>
                         <div
-                            className='Search'
+                            className={Nstyle.Search}
                             onMouseEnter={() => handlehover('search')}
                             onMouseLeave={() => handleleave('search')}
                         >
                             <IoSearchSharp />
                         </div>
-                        {search && <p className='back'>search</p>}
+                        {search && <p className={Nstyle.back}>search</p>}
                     </div>
 
                     {/* CART */}
 
                     <div>
-                        <div
-                            className='Cart'
-                            onMouseEnter={() => handlehover('cart')}
-                            onMouseLeave={() => handleleave('cart')}
-                        >
-                            <HiShoppingCart />
-                        </div>
-                        {cart && <p className='back-cart'>Cart</p>}
-                    </div>
+                        <Link to="/cart">
+                            <div
+                                className={Nstyle.Cart}
+                                onMouseEnter={() => handlehover('cart')}
+                                onMouseLeave={() => handleleave('cart')}
+                            >
+                                <HiShoppingCart />
+                            </div>
+
+                        </Link>
+
+
+                    </div>{cart && <p className={Nstyle.backcart}>Cart</p>}
+
 
 
 
@@ -103,7 +110,7 @@ const Navigation = () => {
                         )}
                     </div>
                 </div>
-            </div>
+            </div >
             {
                 islogin && <div className=' position-absolute z-8'>
                     <div> <Login /></div>

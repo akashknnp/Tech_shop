@@ -10,7 +10,7 @@ const cartSlice=createSlice({
             })
 
             if(existingItem){
-               console.log(existingItem);
+               existingItem.quantity+=1
                
             }
             else{
@@ -23,10 +23,23 @@ const cartSlice=createSlice({
 
         },
         reduceItem(state,action){
+            console.log(action.payload);
+            const exist=state.find((item)=>item.id===action.payload.id)
+            if(exist.quantity===1){
+                 return state=state.filter((item)=>{
+                    return item.id!==action.payload.id
+                })
+            }
+            else {
+                exist.quantity-=1
+                
+            }
+            
 
         },
         increaseItem(state,action){
-
+            const exist = state.find((item)=>item.id===action.payload.id)
+            exist.quantity+=1
         }
     }
 })

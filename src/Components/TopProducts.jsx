@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 
 
 const TopProducts = () => {
+    const [cartbtn, setbtn] = useState(null)
     const dispatch = useDispatch()
     const [products, setProducts] = useState([])
 
@@ -45,8 +46,12 @@ const TopProducts = () => {
 
     const handleCart = (param) => {
         console.log(param);
-
+        setbtn(param.id)
         dispatch(addTocart(param))
+
+        setTimeout(() => {
+            setbtn(null)
+        }, 2000)
     }
 
 
@@ -87,7 +92,10 @@ const TopProducts = () => {
                                         <h4>₨ {item.originalPrice}</h4>
 
                                     </div>
-                                    <button onClick={() => handleCart(item)}>Add to Cart</button>
+                                    <button onClick={() => handleCart(item)}>
+                                        {cartbtn === item.id ? <p className={Pstyle.sucesbtn}>Added</p> : "Add to cart"}
+                                    </button>
+
                                 </div>
                             ))
                         ).concat(<div className={Pstyle.item} id={Pstyle.browse}>

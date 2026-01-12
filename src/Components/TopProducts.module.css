@@ -76,6 +76,11 @@
 .arrow {
   font-size: xxx-large;
 }
+.sucesbtn {
+  background-color: rgb(84, 138, 3);
+  height: 100%;
+  align-content: center;
+}
 
 @media (max-width: 767px) {
   .productMain img {
