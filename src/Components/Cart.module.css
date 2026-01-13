@@ -82,6 +82,18 @@
   text-align: center;
   padding: 10px;
 }
+.emptycart {
+  color: red;
+  font-size: 80px;
+  text-align: center;
+}
+.empty {
+  text-align: center;
+  cursor: pointer;
+}
+.empty h2 {
+  color: rgb(3, 170, 11);
+}
 @media (max-width: 576px) {
   .cartMain {
     flex-direction: column;

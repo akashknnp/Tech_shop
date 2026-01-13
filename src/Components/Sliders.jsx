@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import productsData from '../Data/productsData'
@@ -8,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Sliders = () => {
-
+    const navigate = useNavigate()
     const [sliderData, setsliderData] = useState([])
 
     useEffect(() => {
@@ -18,6 +19,10 @@ const Sliders = () => {
         setsliderData(filtered)
     }, [])
 
+
+    const handleshop = (Pid) => {
+        navigate(`/product/${Pid}`)
+    }
     return (
         <>
             {
@@ -53,12 +58,12 @@ const Sliders = () => {
                                                     <p>₨  {prod.originalPrice}</p>
                                                 </div>
 
-                                                <button className={styles.shopBtn}>
+                                                <button className={styles.shopBtn} onClick={() => handleshop(prod.id)}>
                                                     Shop Now
                                                 </button>
                                             </div>
 
-                                            <div className={styles.slideDiv2}>
+                                            <div className={styles.slideDiv2} onClick={() => handleshop(prod.id)}>
                                                 <img src={prod.heroImage} alt={prod.title} />
                                             </div>
                                         </div>

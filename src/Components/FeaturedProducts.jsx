@@ -7,9 +7,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ProductsData from '../Data/productsData'
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedProducts = () => {
-
+    const navigate = useNavigate()
     const [featureData, setfeatureData] = useState([])
 
     useEffect(() => {
@@ -17,15 +18,12 @@ const FeaturedProducts = () => {
     }, [])
 
     const featureProducts = () => {
-        // let data = 
         setfeatureData(ProductsData.filter((product) => {
             return Object.keys(product).includes('tag')
         }))
-
-        // setfeatureData(data.filter((prod) => {
-        //     return prod.tag === 'featured-product'
-        // }))
-
+    }
+    const handleshoping = (Pid) => {
+        navigate(`/product/${Pid}`)
     }
     return (
         <>
@@ -63,7 +61,7 @@ const FeaturedProducts = () => {
                             >
                                 {featureData.map((prod) => (
                                     <SwiperSlide key={prod.id}>
-                                        <div className={style.slide}>
+                                        <div className={style.slide} onClick={() => handleshoping(prod.id)}>
                                             <p>{prod.title}</p>
                                             <img src={prod.images[0]} />
                                             <div>

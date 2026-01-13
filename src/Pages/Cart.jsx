@@ -4,11 +4,12 @@ import Cstyle from '../Components/Cart.module.css'
 import { useDispatch } from 'react-redux'
 import { increaseItem, reduceItem } from '../Redux/CartSlice'
 import Footer from '../Components/Footer'
-
+import { MdRemoveShoppingCart } from "react-icons/md";
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const cart = useSelector((item) => {
         return item.cart
     })
@@ -23,7 +24,7 @@ const Cart = () => {
             <div className={Cstyle.cartMain}>
                 <div>
                     {
-                        cart ? (
+                        cart.length > 0 ? (
                             cart.map((item) => (
                                 <div className={Cstyle.cartCard}>
                                     <div className={Cstyle.imgCart}>
@@ -32,8 +33,8 @@ const Cart = () => {
                                     <div className={Cstyle.infocart}>
                                         <h1>{item.title}</h1>
                                         <div>
-                                            <h3>{item.finalPrice * item.quantity}</h3>
-                                            <h4>{item.originalPrice * item.quantity}</h4>
+                                            <h3>₨. {item.finalPrice * item.quantity}</h3>
+                                            <h4>₨. {item.originalPrice * item.quantity}</h4>
                                         </div>
                                         <div className={Cstyle.cartbtns}>
                                             <button onClick={() => handledecrease(item)}>-</button>
@@ -43,23 +44,26 @@ const Cart = () => {
                                     </div>
                                 </div>
                             ))
-                        ) : (<h2>No cart items</h2>)
+                        ) : (<div className={Cstyle.empty}><h3 className={Cstyle.emptycart}><MdRemoveShoppingCart /></h3>
+                            <h4>No items added yet, </h4>
+                            <h2 onClick={() => navigate("/")}>Click here to continue Shopping</h2></div>
+                        )
                     }
                 </div>
                 <div className={Cstyle.summary}>
                     <h1>Order Summary</h1>
                     <hr />
                     <div>
-                        <p>Original price : {cart.reduce((total, item) => {
+                        <p>Original price : ₨ {cart.reduce((total, item) => {
                             return total = total + (item.quantity * item.originalPrice)
                         }, 0)}</p>
-                        <p>Discount : {cart.reduce((total, item) => {
+                        <p>Discount :  ₨-{cart.reduce((total, item) => {
                             return total = total + ((item.originalPrice - item.finalPrice) * item.quantity);
                         }, 0)}</p>
                         <hr />
-                        <h2>Total : {cart.reduce((total, item) => {
+                        <h2>Total Price: ₨ {cart.reduce((total, item) => {
                             return total = total + (item.quantity * item.finalPrice)
-                        }, 0)}</h2>
+                        }, 0)} /-</h2>
                     </div>
                 </div>
             </div>

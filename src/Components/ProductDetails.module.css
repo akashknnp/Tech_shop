@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   color: rgb(235, 225, 225);
-  height: 85vh;
+  height: 90vh;
 }
 
 .detailMain img {
@@ -11,16 +11,22 @@
 }
 .Div1 {
   width: 20%;
-  background-color: rgb(27, 25, 25);
+  background-color: rgb(26, 24, 24);
   margin: 10px;
+  border-radius: 10px;
 }
 .Div2 {
   width: 40%;
-  background-color: black;
+  background-color: rgb(26, 24, 24);
   margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  align-content: center;
 }
 .Div2 > img {
-  width: 90%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 .Div3 {
   background-color: rgb(26, 24, 24);
@@ -55,4 +61,23 @@
 }
 .Div3 h3 {
   text-decoration: line-through;
+}
+.PreviewImage {
+  background-color: black;
+  width: 45%;
+  height: fit-content;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.PreviewImage img {
+  width: 100%;
+  height: fit-content;
+}
+.Div1 > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
 }
