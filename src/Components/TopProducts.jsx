@@ -6,11 +6,15 @@ import { FaStar } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import { addTocart } from '../Redux/CartSlice';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 const TopProducts = () => {
-    const [cartbtn, setbtn] = useState(null)
+
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const [cartbtn, setbtn] = useState(null)
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -53,6 +57,9 @@ const TopProducts = () => {
             setbtn(null)
         }, 2000)
     }
+    const handleDetails = (itemId) => {
+        navigate(`/product/${itemId}`)
+    }
 
 
     return (
@@ -72,7 +79,7 @@ const TopProducts = () => {
                         products.length > 0 ? (
                             products.map((item) => (
                                 <div className={Pstyle.item} key={item.id}>
-                                    <div>
+                                    <div onClick={() => handleDetails(item.id)}>
                                         <img src={item.images[0]} />
                                     </div>
                                     <div>

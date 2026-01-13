@@ -1,0 +1,58 @@
+.detailMain {
+  background-color: rgb(41, 41, 41);
+  width: 100%;
+  display: flex;
+  color: rgb(235, 225, 225);
+  height: 85vh;
+}
+
+.detailMain img {
+  width: 20%;
+}
+.Div1 {
+  width: 20%;
+  background-color: rgb(27, 25, 25);
+  margin: 10px;
+}
+.Div2 {
+  width: 40%;
+  background-color: black;
+  margin: 10px;
+}
+.Div2 > img {
+  width: 90%;
+}
+.Div3 {
+  background-color: rgb(26, 24, 24);
+  width: 40%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.Div3 p {
+  padding: 10px;
+}
+.Div3 > div {
+  display: flex;
+  align-items: center;
+}
+.Div3 button {
+  border: none;
+  padding: 10px 30px;
+  font-size: large;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+.boxdiv > div {
+  /* padding: 10px 20px; */
+  border: 1px solid grey;
+  margin: 5px 20px;
+  border-radius: 5px;
+}
+.green {
+  color: rgb(65, 238, 12);
+}
+.Div3 h3 {
+  text-decoration: line-through;
+}

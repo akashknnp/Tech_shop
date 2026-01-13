@@ -43,7 +43,7 @@ const Cart = () => {
                                     </div>
                                 </div>
                             ))
-                        ) : (<>No cart items</>)
+                        ) : (<h2>No cart items</h2>)
                     }
                 </div>
                 <div className={Cstyle.summary}>
