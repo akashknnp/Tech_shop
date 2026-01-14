@@ -1,0 +1,62 @@
+.allmainProducts {
+  display: flex;
+}
+.filterMainDiv {
+  width: 20%;
+}
+.productMain {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+.productMain img {
+  width: 100%;
+  text-align: center;
+}
+.item {
+  background-color: rgb(14, 13, 13);
+  padding: 20px;
+  color: rgb(207, 206, 206);
+  border: 1px solid rgb(97, 94, 94);
+  border-radius: 10px;
+}
+.item > div:nth-child(1) {
+  padding: 20px;
+  width: 80%;
+  text-align: center;
+}
+.item > div:nth-child(9) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: whitesmoke;
+}
+.item h4 {
+  text-decoration: line-through;
+  color: grey;
+}
+.item button {
+  width: 100%;
+  color: white;
+  height: 40px;
+  margin-top: 20px;
+  background-color: red;
+  border: none;
+  font-size: medium;
+  border-radius: 5px;
+}
+
+#browse {
+  text-align: center;
+  align-content: center;
+}
+.arrow {
+  font-size: xxx-large;
+}
+.sucesbtn {
+  background-color: rgb(84, 138, 3);
+  height: 100%;
+  align-content: center;
+}

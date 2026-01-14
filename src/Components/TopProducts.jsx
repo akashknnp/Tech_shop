@@ -105,7 +105,7 @@ const TopProducts = () => {
 
                                 </div>
                             ))
-                        ).concat(<div className={Pstyle.item} id={Pstyle.browse}>
+                        ).concat(<div className={Pstyle.item} id={Pstyle.browse} onClick={() => navigate('/allproducts')}>
                             <h2>Browse All products<br />
                                 <GoArrowRight className={Pstyle.arrow} />
                             </h2>
