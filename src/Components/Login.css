@@ -3,11 +3,16 @@
   height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  z-index: 10;
+
+  position: fixed; /* 🔥 IMPORTANT */
+  top: 0;
+  left: 0;
+
+  z-index: 999;
 }
 
 /* Card */

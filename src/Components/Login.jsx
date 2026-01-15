@@ -1,16 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ onClose }) => {
+
+    // close when clicking outside card
+    const handleOverlayClick = (e) => {
+        if (e.target.classList.contains("login-overlay")) {
+            onClose();
+        }
+    };
+
     return (
-        <div className="login-overlay">
+        <div className="login-overlay" onClick={handleOverlayClick}>
             <div className="login-card">
-                <span className="close-btn">×</span>
+                <span className="close-btn" onClick={onClose}>×</span>
 
                 <h2>Login</h2>
                 <p className="subtitle">
                     New to Tech-Shop? <span>Create an account</span>
                 </p>
+
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
 
@@ -30,4 +39,4 @@ const Login = () => {
     );
 };
 
-export default Login
+export default Login;
