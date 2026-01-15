@@ -1,5 +1,6 @@
 .allmainProducts {
   display: flex;
+  background-color: #333;
 }
 .filterMainDiv {
   width: 20%;
@@ -59,4 +60,53 @@
   background-color: rgb(84, 138, 3);
   height: 100%;
   align-content: center;
+}
+
+.filterMainDiv {
+  width: 260px;
+  padding: 20px;
+  background-color: #111;
+  color: #e5e5e5;
+  border-radius: 12px;
+  position: sticky;
+  top: 110px;
+  height: 80vh;
+  overflow-y: auto;
+  margin: 10px;
+}
+
+.filterMainDiv h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.filterMainDiv p {
+  cursor: pointer;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.filterMainDiv p:hover {
+  color: #ff4d4d;
+}
+
+/* Checkbox rows */
+.filterMainDiv div > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.filterMainDiv input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* Price range */
+.filterMainDiv input[type="range"] {
+  width: 100%;
+  margin-top: 8px;
 }

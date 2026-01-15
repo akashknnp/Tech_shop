@@ -5,6 +5,8 @@ import { addTocart } from '../Redux/CartSlice'
 import { useDispatch } from 'react-redux'
 import { FaStar } from "react-icons/fa"
 import { brandsMenu, categoryMenu } from '../Data/filterBarData'
+import Advantages from '../Components/Advantages'
+import Footer from '../Components/Footer'
 
 const Allproducts = () => {
 
@@ -74,104 +76,109 @@ const Allproducts = () => {
     }
 
     return (
-        <div className={AllStyle.allmainProducts}>
+        <>
+            <div className={AllStyle.allmainProducts}>
 
-            {/* FILTER SIDEBAR */}
-            <div className={AllStyle.filterMainDiv}>
+                {/* FILTER SIDEBAR */}
+                <div className={AllStyle.filterMainDiv}>
 
-                {/* SORT */}
-                <div>
-                    <h3>Sort By</h3>
-                    <p onClick={() => setSortType('latest')}>Latest</p>
-                    <p onClick={() => setSortType('featured')}>Featured</p>
-                    <p onClick={() => setSortType('rated')}>Top Rated</p>
-                    <p onClick={() => setSortType('lowest')}>Price Low → High</p>
-                    <p onClick={() => setSortType('highest')}>Price High → Low</p>
+                    {/* SORT */}
+                    <div>
+                        <h3>Sort By</h3>
+                        <p onClick={() => setSortType('latest')}>Latest</p>
+                        <p onClick={() => setSortType('featured')}>Featured</p>
+                        <p onClick={() => setSortType('rated')}>Top Rated</p>
+                        <p onClick={() => setSortType('lowest')}>Price Low → High</p>
+                        <p onClick={() => setSortType('highest')}>Price High → Low</p>
+                    </div>
+
+                    {/* BRANDS */}
+                    <div>
+                        <h3>Brands</h3>
+                        {
+                            brandsMenu.map(brand => (
+                                <div key={brand.id}>
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedFilters.includes(brand.label)}
+                                        onChange={() => handlecheck(brand)}
+                                    />
+                                    <p>{brand.label}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    {/* CATEGORIES */}
+                    <div>
+                        <h3>Category</h3>
+                        {
+                            categoryMenu.map(cat => (
+                                <div key={cat.id}>
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedFilters.includes(cat.label)}
+                                        onChange={() => handlecheck(cat)}
+                                    />
+                                    <p>{cat.label}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    {/* PRICE RANGE */}
+                    <div>
+                        <h3>Max Price</h3>
+                        <input
+                            type="range"
+                            min="999"
+                            max="19999"
+                            value={price}
+                            onChange={handleRange}
+                        />
+                        <p>₹ {price}</p>
+                    </div>
                 </div>
 
-                {/* BRANDS */}
-                <div>
-                    <h3>Brands</h3>
+                {/* PRODUCTS */}
+                <div className={AllStyle.productMain}>
                     {
-                        brandsMenu.map(brand => (
-                            <div key={brand.id}>
-                                <input
-                                    type="checkbox"
-                                    checked={selectedFilters.includes(brand.label)}
-                                    onChange={() => handlecheck(brand)}
-                                />
-                                <p>{brand.label}</p>
-                            </div>
-                        ))
+                        defaultProduct.length > 0 ? (
+                            defaultProduct.map(item => (
+                                <div className={AllStyle.item} key={item.id}>
+
+                                    <img src={item.images[0]} alt={item.title} />
+
+                                    <div>
+                                        {[...Array(item.rateCount)].map((_, i) => (
+                                            <FaStar key={i} color="red" />
+                                        ))}
+                                    </div>
+
+                                    <h2>{item.title}</h2>
+                                    <p>{item.info}</p>
+
+                                    <div>
+                                        <h1>₹ {item.finalPrice}</h1>
+                                        <h4>₹ {item.originalPrice}</h4>
+                                    </div>
+
+                                    <button onClick={() => handleCart(item)}>
+                                        {cartbtn === item.id ? 'Added' : 'Add to cart'}
+                                    </button>
+
+                                </div>
+                            ))
+                        ) : (
+                            <h2>No Products Found</h2>
+                        )
                     }
                 </div>
 
-                {/* CATEGORIES */}
-                <div>
-                    <h3>Category</h3>
-                    {
-                        categoryMenu.map(cat => (
-                            <div key={cat.id}>
-                                <input
-                                    type="checkbox"
-                                    checked={selectedFilters.includes(cat.label)}
-                                    onChange={() => handlecheck(cat)}
-                                />
-                                <p>{cat.label}</p>
-                            </div>
-                        ))
-                    }
-                </div>
-
-                {/* PRICE RANGE */}
-                <div>
-                    <h3>Max Price</h3>
-                    <input
-                        type="range"
-                        min="999"
-                        max="19999"
-                        value={price}
-                        onChange={handleRange}
-                    />
-                    <p>₹ {price}</p>
-                </div>
             </div>
-
-            {/* PRODUCTS */}
-            <div className={AllStyle.productMain}>
-                {
-                    defaultProduct.length > 0 ? (
-                        defaultProduct.map(item => (
-                            <div className={AllStyle.item} key={item.id}>
-
-                                <img src={item.images[0]} alt={item.title} />
-
-                                <div>
-                                    {[...Array(item.rateCount)].map((_, i) => (
-                                        <FaStar key={i} color="red" />
-                                    ))}
-                                </div>
-
-                                <h2>{item.title}</h2>
-                                <p>{item.info}</p>
-
-                                <div>
-                                    <h1>₹ {item.finalPrice}</h1>
-                                    <h4>₹ {item.originalPrice}</h4>
-                                </div>
-
-                                <button onClick={() => handleCart(item)}>
-                                    {cartbtn === item.id ? 'Added' : 'Add to cart'}
-                                </button>
-
-                            </div>
-                        ))
-                    ) : (
-                        <h2>No Products Found</h2>
-                    )
-                }
-            </div>
-        </div>
+            <Advantages />
+            <Footer />
+        </>
     )
 }
 
