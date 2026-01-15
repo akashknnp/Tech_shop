@@ -5,8 +5,14 @@ import { HiShoppingCart } from "react-icons/hi"
 import { Link, useNavigate } from 'react-router-dom'
 import Login from './Login'
 import productsData from '../Data/productsData'
+import { useSelector } from 'react-redux'
 
 const Navigation = () => {
+    const cartArray = useSelector((state) => state.cart)
+
+    const cartCount = cartArray.reduce((total, item) => {
+        return total + item.quantity
+    }, 0)
 
     const navigate = useNavigate()
 
@@ -138,7 +144,7 @@ const Navigation = () => {
                     </div>
 
                     {/* 🛒 CART */}
-                    <div>
+                    <div className={Nstyle.cartWrapper}>
                         <Link to="/cart">
                             <div
                                 className={Nstyle.Cart}
@@ -146,8 +152,15 @@ const Navigation = () => {
                                 onMouseLeave={() => setcart(false)}
                             >
                                 <HiShoppingCart />
+
+                                {cartCount > 0 && (
+                                    <span className={Nstyle.cartCount}>
+                                        {cartCount}
+                                    </span>
+                                )}
                             </div>
                         </Link>
+
                         {cart && <p className={Nstyle.backcart}>Cart</p>}
                     </div>
 
